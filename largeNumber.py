@@ -18,6 +18,11 @@ class TestClass(unittest.TestCase):
             print("您的输入不合法，请运行该程序")
             return
 
+        # 判断两个列表的长度，使list1和list2的长度相等，不够的，就补0
+        max_len = len(num1) if len(num1) > len(num2) else len(num2)
+        num1 = num1.zfill(max_len)
+        num2 = num2.zfill(max_len)
+
         # 创建列表，用来保存输入的数字
         # 这里的列表里必须先放入0,以解决两数相加要创建新的一位的问题，例如 98 + 4 = 102
         li1 = [0]
@@ -28,15 +33,7 @@ class TestClass(unittest.TestCase):
             li1.append(int(i))
         for i in num2:
             li2.append(int(i))
-
-        # 判断两个列表的长度，使list1和list2的长度相等，不够的，就补0
-        if len(li1) > len(li2):
-            for i in range(len(li2), len(li1)):
-                li2.insert(0, 0)
-        else:
-            for i in range(len(li1), len(li2)):
-                li1.insert(0, 0)
-
+            
         # 将两个列表中的数据相加合并到li1中
         for i in range(len(li1)):
             li1[i] = li1[i] + li2[i]
