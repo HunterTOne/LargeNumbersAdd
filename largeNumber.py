@@ -1,12 +1,14 @@
 import unittest
 
+
+# 大数乘法
 class TestClass(unittest.TestCase):
 
-    #该方法会首先执行，相当于做测试前的准备工作
+    #测试前的准备工作
     def setUp(self):
         pass
 
-    #该方法会在测试代码执行完后执行，相当于做测试后的扫尾工作
+    #测试后的扫尾工作
     def tearDown(self):
        pass
     #测试代码
@@ -15,7 +17,7 @@ class TestClass(unittest.TestCase):
         if num1.isdigit() and num2.isdigit():
             pass
         else:
-            print("您的输入不合法，请运行该程序")
+            print("您的输入不合法，请重新输入")
             return
 
         # 判断两个列表的长度，使list1和list2的长度相等，不够的，就补0
@@ -24,7 +26,7 @@ class TestClass(unittest.TestCase):
         num2 = num2.zfill(max_len)
 
         # 创建列表，用来保存输入的数字
-        # 这里的列表里必须先放入0,以解决两数相加要创建新的一位的问题，例如 98 + 4 = 102
+        # 这里的列表里必须先放入0,以解决两数相加要创建新的一位的问题，例如 99 + 2 = 101
         li1 = [0]
         li2 = [0]
 
@@ -45,7 +47,7 @@ class TestClass(unittest.TestCase):
                 li1[i] = li1[i] % 10
                 li1[i - 1] = li1[i - 1] + 1
 
-        # 如果数字前面是0，则默认去掉前面的0，例如00456应该输出的是456
+        # 如果数字前面是0，则默认去掉前面的0，例如00123应该输出的是123
         # 使用字符串切片，把数字前面的0去掉
         string = ""
         for i in li1:
