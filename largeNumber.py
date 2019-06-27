@@ -68,3 +68,5 @@ if __name__ == '__main__':
     result =tc.test_my_sum(num1, num2)
     print(result)
 
+   
+# python脚本运行方式：python largeNumber.py
