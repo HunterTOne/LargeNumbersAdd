@@ -1,4 +1,5 @@
 import unittest
+import pysnooper
 
 # 大数加法
 class TestClass(unittest.TestCase):
@@ -12,6 +13,7 @@ class TestClass(unittest.TestCase):
         pass
 
     # 测试代码
+    # @pysnooper.snoop()
     def test_my_sum(self, num1, num2):
         # 判断用户输入的字符串是否是数字，如果不是则提示错误信息
         if num1.isdigit() and num2.isdigit():
