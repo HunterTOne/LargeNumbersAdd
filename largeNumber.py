@@ -1,18 +1,18 @@
 import unittest
 
-
-# 大数乘法
+# 大数加法
 class TestClass(unittest.TestCase):
 
-    #测试前的准备工作
+    # 测试前的准备工作
     def setUp(self):
         pass
 
-    #测试后的扫尾工作
+    # 测试后的扫尾工作
     def tearDown(self):
-       pass
-    #测试代码
-    def test_my_sum(num1, num2):
+        pass
+
+    # 测试代码
+    def test_my_sum(self, num1, num2):
         # 判断用户输入的字符串是否是数字，如果不是则提示错误信息
         if num1.isdigit() and num2.isdigit():
             pass
@@ -35,7 +35,7 @@ class TestClass(unittest.TestCase):
             li1.append(int(i))
         for i in num2:
             li2.append(int(i))
-            
+
         # 将两个列表中的数据相加合并到li1中
         for i in range(len(li1)):
             li1[i] = li1[i] + li2[i]
@@ -58,11 +58,11 @@ class TestClass(unittest.TestCase):
         # 把处理过后的结果转成int类型，之后返回
         return int(string)
 
-
-    # 程序入口
-    if __name__ == '__main__':
-        num1 = input("请输入第一个数字：")
-        num2 = input("请输入第二个数字：")
-        result = test_my_sum(num1, num2)
-        print(result)
+# 程序入口
+if __name__ == '__main__':
+    num1 = input("请输入第一个数字：")
+    num2 = input("请输入第二个数字：")
+    tc = TestClass()
+    result =tc.test_my_sum(num1, num2)
+    print(result)
 
