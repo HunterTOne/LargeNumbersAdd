@@ -1,6 +1,9 @@
+#coding=utf-8
 import unittest
-import pysnooper
+#import pysnooper
 
+# 这是一次本地pycharm  连接到远程Linux主机 然后推到远程服务器的一次测试
+# nb  hahahha
 # 大数加法
 class TestClass(unittest.TestCase):
 
